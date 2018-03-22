@@ -1,0 +1,14 @@
+
+Code After Stripping off Comments:
+-------------------------------------------------------------------------------------------------
+#includeParsing Failed
+Line Number: 1 syntax error, unexpected id, expecting CLASS
+
+-------------------------------------------------------------------------------------------------
+
+					SYMBOL TABLE
+
+Scope_Num	Tok_Num		 Symbol			TypeOfToken		Line Number
+----------------------------------------------------------------------------------------------
+    0		    1		 include		Identifier		    1
+Total number of tokens : 2
