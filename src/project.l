@@ -50,7 +50,7 @@
 %%
 
 
-"void"|"char"|"int"|"long"|"float"|"double"|"signed"|"unsigned|String"							   {initEntry(yytext);
+"void"|"char"|"int"|"long"|"float"|"double"|"signed"|"unsigned"|"String"							   {initEntry(yytext);
 														    strcpy(symtab[tcnt].type,"Keyword");	
 														    tcnt++;
 														    ECHO;
