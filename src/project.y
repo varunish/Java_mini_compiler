@@ -21,7 +21,7 @@
 program_unit				: CLASS id '{' BODY '}'
 							{YYACCEPT;};
 
-BODY						: access_specifier STATIC type_const MAIN '(' type_const '[' ']' id ')' '{' COMPOUND_STMT '}'
+BODY						: access_specifier STATIC type_const MAIN '(' type_const '[' ']' id ')'  COMPOUND_STMT 
 							;
 
 COMPOUND_STMT						: '{' DECL STMT '}'
