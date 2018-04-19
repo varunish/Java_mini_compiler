@@ -187,11 +187,12 @@ jump_stat					: CONTINUE ';'{insert(1,$1,"Keyword");}
 							;
 
 exp_stat					: exp ';'
-							| ';'
+						
 							;
 
 exp							: assignment_exp
 							| exp ',' assignment_exp
+							|
 							;
 assignment_exp				: conditional_exp
 							| unary_exp{push($1);} '='{push("=");} conditional_exp{codegen_assign();}
