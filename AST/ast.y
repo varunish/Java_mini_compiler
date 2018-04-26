@@ -19,16 +19,16 @@
 	nodeType *nPtr; /* node pointer */
 };
 %token <iValue> INTEGER
-%token STATIC MAIN CLASS access_specifier ID type_const
+%token STATIC MAIN CLASS access_specifier ID type_const 
 %token <sIndex> VARIABLE
-%token WHILE IF PRINT FOR
+%token WHILE IF PRINT FOR INT FLOAT CHAR
 %nonassoc IFX
 %nonassoc ELSE
 %left GE LE EQ NE '>' '<'
 %left '+' '-'
 %left '*' '/'
 %nonassoc UMINUS INC DEC
-%type <nPtr> stmt expr stmt_list 
+%type <nPtr> stmt expr stmt_list type_const
 
 %%
 program:	CLASS ID '{' BODY '}' { exit(0); }
@@ -45,6 +45,9 @@ stmt:
 		| IF '(' expr ')' stmt %prec IFX { $$ = opr(IF, 2, $3, $5); }
 		| IF '(' expr ')' stmt ELSE stmt { $$ = opr(IF, 3, $3, $5, $7); }
 		| '{' stmt_list '}' { $$ = $2; }
+		| INT expr ';' {$$ = opr(INT, 1,$2);}
+		| FLOAT expr ';' {$$ = opr(FLOAT, 1, $2);}
+		| CHAR expr ';' {$$ = opr(CHAR, 1, $2);}
 		;
 
 stmt_list:

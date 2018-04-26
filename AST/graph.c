@@ -55,6 +55,9 @@ case '=': s = "[=]"; break;
 case UMINUS: s = "[_]"; break;
 case INC:	s = "[++]";break;
 case DEC:	s = "[--]";break;
+case INT:	s ="[int]";break;
+case FLOAT:	s ="[float]";break;
+case CHAR:	s ="[char]";break;
 case '+': s = "[+]"; break;
 case '-': s = "[-]"; break;
 case '*': s = "[*]"; break;
@@ -65,6 +68,7 @@ case GE: s = "[>=]"; break;
 case LE: s = "[<=]"; break;
 case NE: s = "[!=]"; break;
 case EQ: s = "[==]"; break;
+
 }
 break;
 }

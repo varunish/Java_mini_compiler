@@ -5,6 +5,9 @@
 	void yyerror(char *);
 %}
 %%
+"int"											return INT;
+"float"											return FLOAT;
+"char"											return CHAR;
 [a-z] 					{
 							yylval.sIndex = *yytext - 'a';
 							return VARIABLE;
@@ -30,6 +33,7 @@
 "==" 						return EQ;
 "!=" 						return NE;
 "while" 					return WHILE;
+
 "for"						return FOR;
 "if" 						return IF;
 "else" 						return ELSE;
